@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:one/Text_style.dart';
 
-class SingIn extends StatefulWidget {
-  const SingIn({Key? key}) : super(key: key);
+class SignIn extends StatefulWidget {
+  const SignIn({Key? key}) : super(key: key);
 
   @override
-  State<SingIn> createState() => _SingInState();
+  State<SignIn> createState() => _SignInState();
 }
 
-class _SingInState extends State<SingIn> {
-  bool _hadePass = true;
+class _SignInState extends State<SignIn> {
   bool isChecked = true;
 
   @override
@@ -42,7 +42,7 @@ class _SingInState extends State<SingIn> {
                   width: 390,
                   child: Center(
                     child: Text(
-                      'Sing in',
+                      'sign in',
                       style: GoogleFonts.lato(
                           color: Colors.black,
                           fontSize: 28,
@@ -58,12 +58,8 @@ class _SingInState extends State<SingIn> {
                   width: 390,
                   child: Center(
                     child: Text(
-                      'Sign in to your account using email and password provided during registration.',
-                      style: GoogleFonts.lato(
-                        color: Colors.grey,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      'Sign in to your account during email and password provided during registration.',
+                      style: GoogleFontslato,
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -77,26 +73,14 @@ class _SingInState extends State<SingIn> {
                         const EdgeInsets.only(left: 48, top: 24, right: 48),
                     child: Text(
                       'Email',
-                      style: GoogleFonts.lato(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: GoogleFontslato
                     ),
                   ),
                 ],
               ),
               Padding(
                 padding: EdgeInsets.only(left: 48, top: 8, right: 48),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    labelText: 'Your working email',
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: Colors.grey),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
+                child:  Email_in(),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -119,25 +103,7 @@ class _SingInState extends State<SingIn> {
               ),
               Padding(
                 padding: EdgeInsets.only(left: 48, top: 8, right: 48),
-                child: TextFormField(
-                  obscureText: _hadePass,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                          _hadePass ? Icons.visibility : Icons.visibility_off),
-                      onPressed: () {
-                        setState(() {
-                          _hadePass = !_hadePass;
-                        });
-                      },
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 1, color: Colors.grey),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                ),
+                child: Pas_in(),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -166,11 +132,7 @@ class _SingInState extends State<SingIn> {
                       height: 21,
                       child: Text(
                         'Keep me signed in',
-                        style: GoogleFonts.lato(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: GoogleFontslato,
                       ),
                     ),
                   ),
@@ -181,11 +143,7 @@ class _SingInState extends State<SingIn> {
                       height: 21,
                       child: Text(
                         'Forgot password?',
-                        style: GoogleFonts.lato(
-                          color: Colors.red,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: GoogleFontslato,
                       ),
                     ),
                   ),
@@ -203,7 +161,7 @@ class _SingInState extends State<SingIn> {
                 child: ElevatedButton(
                   onPressed: () {},
                   child: const Text(
-                    'Sing in',
+                    'sign in',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -216,14 +174,11 @@ class _SingInState extends State<SingIn> {
                   ),
                   Text(
                     "Don't have an account?",
-                    style: GoogleFonts.lato(
-                        color: Colors.black,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400),
+                    style: GoogleFontslato,
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: Text('Sing up'),
+                    child: Text('sign up'),
                   ),
                 ],
               ),
@@ -235,55 +190,12 @@ class _SingInState extends State<SingIn> {
                 children: [
                   Center(
                     child: Text(
-                      'Or sing in with',
-                      style: GoogleFonts.lato(
-                          color: Colors.grey,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400),
+                      'Or sign in with',
+                      style: GoogleFontslato,
                     ),
                   ),
                   SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: Image.asset(
-                          'assets/icons/F.png',
-                          color: Colors.grey,
-                          width: 9.65,
-                          height: 18.33,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Image.asset(
-                          'assets/icons/G.png',
-                          color: Colors.grey,
-                          width: 17.8,
-                          height: 17.44,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Image.asset(
-                          'assets/icons/Twit.png',
-                          color: Colors.deepOrange,
-                          width: 17.5,
-                          height: 13.61,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Image.asset(
-                          'assets/icons/In.png',
-                          color: Colors.grey,
-                          width: 16.67,
-                          height: 16.67,
-                        ),
-                      ),
-                    ],
-                  ),
+                  DButton(),
                 ],
               ),
             ],
@@ -293,3 +205,106 @@ class _SingInState extends State<SingIn> {
     );
   }
 }
+class Email_in extends StatefulWidget {
+  @override
+  State<Email_in> createState() => _Email_inState();
+}
+class _Email_inState extends State<Email_in> {
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      decoration: InputDecoration(
+        labelText: 'Your working email',
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(width: 1, color: Colors.grey),
+          borderRadius: BorderRadius.circular(4),
+        ),
+      ),
+    );
+  }
+}
+
+
+class Pas_in extends StatefulWidget {
+  @override
+  State<Pas_in> createState() => _Pas_inState();
+}
+class _Pas_inState extends State<Pas_in> {
+  bool _hadePass = true;
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      obscureText: _hadePass,
+      decoration: InputDecoration(
+        labelText: 'Password',
+        suffixIcon: IconButton(
+          icon: Icon(
+              _hadePass ? Icons.visibility : Icons.visibility_off),
+          onPressed: () {
+            setState(() {
+              _hadePass = !_hadePass;
+            });
+          },
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(width: 1, color: Colors.grey),
+          borderRadius: BorderRadius.circular(4),
+        ),
+      ),
+    );
+  }
+}
+class DButton extends StatefulWidget {
+  const DButton({Key? key}) : super(key: key);
+
+  @override
+  State<DButton> createState() => _DButtonState();
+}
+
+class _DButtonState extends State<DButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+          onPressed: () {},
+          icon: Image.asset(
+            'assets/icons/F.png',
+            color: Colors.grey,
+            width: 9.65,
+            height: 18.33,
+          ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: Image.asset(
+            'assets/icons/G.png',
+            color: Colors.grey,
+            width: 17.8,
+            height: 17.44,
+          ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: Image.asset(
+            'assets/icons/Twit.png',
+            color: Colors.deepOrange,
+            width: 17.5,
+            height: 13.61,
+          ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: Image.asset(
+            'assets/icons/In.png',
+            color: Colors.grey,
+            width: 16.67,
+            height: 16.67,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
